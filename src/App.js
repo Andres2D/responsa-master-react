@@ -1,8 +1,13 @@
+import Header from './components/statics/Header';
+import Footer from './components/statics/Footer';
 import './App.css';
 
 function App() {
   return (
-    <h1>Responsa Master</h1>
+    <>
+      <Header />
+      <Footer />
+    </>
   );
 }
 
