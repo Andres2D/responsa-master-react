@@ -1,13 +1,12 @@
-import Header from './components/statics/Header';
-import Footer from './components/statics/Footer';
+import Layout from './components/Layout/Layout';
+import Menu from './pages/Menu';
 import './App.css';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Footer />
-    </>
+    <Layout>
+      <Menu />
+    </Layout>
   );
 }
 
