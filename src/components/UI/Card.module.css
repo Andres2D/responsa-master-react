@@ -1,0 +1,76 @@
+.card {
+  margin-top: 50px;
+  border: 2px solid #E8F9FF;
+  border-radius: 9px;
+  width: 250px;
+  height: 200px;
+  display: grid;
+}
+
+.card::after {
+  content: "";
+  background-color: #000;
+  opacity: 0.5;
+  grid-area: 1/-1;;
+  border-radius: 9px;
+}
+
+.card_content {
+  z-index: 1;
+  grid-area: 1/-1;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  grid-area: 1/-1;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 9px;
+}
+
+.title {
+  font-size: 36px;
+  word-wrap: break-word;  
+  max-width: 250px;
+}
+
+.actions {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.action {
+  width: 50%;
+  border: 2px solid #E8F9FF;
+  border-bottom: none;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #006583;
+  color: #E8F9FF;
+  font-size: 15px;
+  transition: all 300ms;
+}
+
+.action:hover {
+  background-color: #E8F9FF;
+  color: #006583;
+}
+
+.single {
+  border-left: none;
+  border-bottom-left-radius: 5px;
+}
+
+.game {
+  border-right: none;
+  border-bottom-right-radius: 5px;
+}
