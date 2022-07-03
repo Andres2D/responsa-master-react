@@ -1,7 +1,13 @@
-import styles from './Question.module.css';
+import AnswerList from '../components/Answer/AnswersList';
+import QuestionCard from '../components/Question/QuestionCard';
 
 const Question = () => {
-  return <p>Question page works!</p>;
+  return (
+    <>
+      <QuestionCard />
+      <AnswerList />
+    </>
+  )
 };
 
 export default Question;
