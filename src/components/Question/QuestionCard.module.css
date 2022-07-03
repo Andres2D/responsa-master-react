@@ -1,0 +1,41 @@
+.questionCard {
+  width: 50%;
+  background-color: #006583;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+.difficulty,
+.category {
+  font-size: 20px;
+  text-align: end;
+}
+
+.correct,
+.incorrect {
+  margin: 5px;
+  text-align: center;
+}
+
+.correct {
+  color: #37AE34;
+}
+
+.incorrect {
+  color: #C65858;
+}
+
+@media (max-width: 890px) {
+  .questionCard {
+    font-size: 20px;
+  }
+
+  .difficulty,
+  .category {
+    font-size: 15px;
+  }
+}
