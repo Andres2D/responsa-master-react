@@ -38,9 +38,9 @@ const QuestionsProvider = props => {
   const questionsContext = {
     questions: questionsState.questions,
     currentQuestion: questionsState.currentQuestion,
-    populateQuestions: questionsState.populateQuestions,
-    updateAnswer: questionsState.updateAnswer,
-    calculateSummary: questionsState.calculateSummary
+    populateQuestions: populateQuestionsHandler,
+    updateAnswer: updateQuestionHandler,
+    calculateSummary: calculateSummaryHandler
   }
 
   return (
