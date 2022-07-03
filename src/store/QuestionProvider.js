@@ -29,6 +29,7 @@ const questionsReducer = (state, action) => {
       };
       return questionsMaped.push(questionFormat);
     });
+
     return {
       questions: questionsMaped,
       currentQuestion: 0

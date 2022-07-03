@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/UI/Button';
 import Card from '../components/UI/Card';
 import styles from './Menu.module.css';
@@ -40,8 +41,19 @@ const DUMMY_CARDS = [
 
 const Menu = () => {
 
-  const {sendRequest} = useRequest();
+  const navigate = useNavigate();
+  
   const questionsCtx = useContext(QuestionsContext);
+  useEffect(() => {
+    if(!questionsCtx.questions[0]) {
+      return;
+    }
+    const route = `/question/${questionsCtx.questions[0].id}`
+    navigate(route)
+
+  }, [questionsCtx, navigate]);
+
+  const {sendRequest} = useRequest();
 
   const cardsList = DUMMY_CARDS.map(({id, title, image}) =>  {
     return (<Card key={id} title={title} image={image} />);
