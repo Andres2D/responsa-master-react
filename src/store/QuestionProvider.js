@@ -1,5 +1,7 @@
 import { useReducer } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import QuestionsContext from './question-context';
+import { scrambleArray } from '../helpers/helpers';
 
 const defaultQuestions = {
   questions: [],
@@ -13,14 +15,16 @@ const questionsReducer = (state, action) => {
     const {questions} = action;
     let questionsMaped = []; 
     questions.map(questionRes => {
+      const baseAnswers = [
+        ...questionRes.incorrect_answers,
+          questionRes.correct_answer
+      ]
       const questionFormat = {
+        id: uuidv4(),
         category: questionRes.category,
         difficulty: questionRes.difficulty,
         correct_answer: questionRes.correct_answer,
-        answers: [
-          ...questionRes.incorrect_answers,
-          questionRes.correct_answer
-        ],
+        answers: scrambleArray(baseAnswers),
         question: questionRes.question
       };
       return questionsMaped.push(questionFormat);

@@ -48,7 +48,6 @@ const Menu = () => {
   });
 
   const singleQuestionHandler = (res) => {
-    console.log(res);
     questionsCtx.populateQuestions(res);
   }
 
