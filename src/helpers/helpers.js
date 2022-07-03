@@ -9,3 +9,9 @@ export const scrambleArray = array => {
   }
   return array;
 };
+
+export const decodeHtml = text => {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = text;
+  return txt.value;
+};

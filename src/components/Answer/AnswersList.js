@@ -1,10 +1,11 @@
+import { v4 as uuidv4 } from 'uuid';
 import Answer from './Answer';
 import styles from './AnswersList.module.css';
 
-const AnswerList = () => {
+const AnswerList = props => {
 
-  const answers = Array.from({length: 4}).map((ans, i) => {
-    return <Answer key={i}/>
+  const answers = props.answers.map((answer) => {
+    return <Answer answer={answer} key={uuidv4()}/>
   });
 
   return (

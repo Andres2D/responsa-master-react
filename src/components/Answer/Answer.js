@@ -1,9 +1,9 @@
 import styles from './Answer.module.css';
 
-const Answer = () => {
+const Answer = props => {
   return (
     <div className={`${styles.answerCard}`}>
-      <p className={styles.answerTitle}>Thievius Raccoonus</p>
+      <p className={styles.answerTitle}>{props.answer}</p>
     </div>
   );
 };
