@@ -1,11 +1,19 @@
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Menu from './pages/Menu';
+import Question from './pages/Question';
+import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 function App() {
   return (
     <Layout>
-      <Menu />
+      <Routes>
+        <Route path='/' element={<Navigate to='/main' />} />
+        <Route path='/main' element={<Menu />} />
+        <Route path='/question/:quiestionId' element={<Question />} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Routes>
     </Layout>
   );
 }
