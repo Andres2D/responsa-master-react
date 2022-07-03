@@ -8,16 +8,30 @@ const defaultQuestions = {
 
 const questionsReducer = (state, action) => {
   const { type } = action;
-  switch(type) {
-    case 'POPULATE':
-      break;
-    case 'UPDATE':
-      break;
-    case 'SUMMARY':
-      break;
-    default:
-      break;
+
+  if(type === 'POPULATE') {
+    const {questions} = action;
+    let questionsMaped = []; 
+    questions.map(questionRes => {
+      const questionFormat = {
+        category: questionRes.category,
+        difficulty: questionRes.difficulty,
+        correct_answer: questionRes.correct_answer,
+        answers: [
+          ...questionRes.incorrect_answers,
+          questionRes.correct_answer
+        ],
+        question: questionRes.question
+      };
+      return questionsMaped.push(questionFormat);
+    });
+    return {
+      questions: questionsMaped,
+      currentQuestion: 0
+    }
   }
+
+  return defaultQuestions;
 };
 
 const QuestionsProvider = props => {

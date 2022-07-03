@@ -14,10 +14,15 @@ const useRequest = () => {
       setIslLoading(true);
 
       const { amount, category } = queryParams;
-      const query = `${API_URL}amount=${amount}&category=${category}&difficulty=easy&type=boolean`
+      const query = `${API_URL}amount=${amount}&category=${category}&difficulty=easy&type=multiple`
       const response = await axios.get(query);
-      console.log(response);
-      applyResponse(response);
+
+      if(response.status !== 200) {
+        throw new Error();
+      }
+      
+      const questions = response.data.results;
+      applyResponse(questions);
     }catch(err) {
       setError(err);
     }

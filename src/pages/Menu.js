@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import Button from '../components/UI/Button';
 import Card from '../components/UI/Card';
 import styles from './Menu.module.css';
+import useRequest from '../hooks/use-reques';
+import QuestionsContext from '../store/question-context';
 
 const DUMMY_CARDS = [
   {
@@ -37,15 +40,32 @@ const DUMMY_CARDS = [
 
 const Menu = () => {
 
+  const {sendRequest} = useRequest();
+  const questionsCtx = useContext(QuestionsContext);
+
   const cardsList = DUMMY_CARDS.map(({id, title, image}) =>  {
     return (<Card key={id} title={title} image={image} />);
   });
+
+  const singleQuestionHandler = (res) => {
+    console.log(res);
+    questionsCtx.populateQuestions(res);
+  }
+
+  const getRandomQuestionHandler = () => {
+    const query = {
+      amount: 1,
+      category: 11
+    };
+    sendRequest(query, singleQuestionHandler);
+  };
 
   return (
     <div className={styles.menu}>
       <Button
         title='Get random question'
         emoji='🔀'
+        onClick={getRandomQuestionHandler}
       />
       <section className={styles.cards}>
         {cardsList}
