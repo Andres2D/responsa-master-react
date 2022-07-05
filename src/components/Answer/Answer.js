@@ -16,7 +16,11 @@ const Answer = props => {
       answerStatus = styles.incorrect;
     }
   }else if(questionObj.answerSelected && props.answer !== questionObj.answerSelected){
-    answerStatus = styles.disabled;
+    if(questionObj.correct_answer === props.answer) {
+      answerStatus = styles.disabledCorrect;
+    }else {
+      answerStatus = styles.disabled;      
+    }
   }else {
     answerStatus = null;
   }
@@ -33,7 +37,7 @@ const Answer = props => {
     <button 
       onClick={answerQuestionHandler} 
       className={`${styles.answerBtn} ${answerStatus}`}
-      disabled={answerStatus === styles.disabled}
+      disabled={answerStatus === styles.disabled || answerStatus === styles.disabledCorrect}
     >
       <p className={styles.answerTitle}>{props.answer}</p>
     </button>

@@ -51,6 +51,19 @@
   background-color: #d3d3d3;
 }
 
+
+.disabledCorrect {
+  color: #8a8a8a;
+  background-color: #d3d3d3;
+  border: 5px solid #37AE34;
+  cursor: not-allowed;
+}
+
+.disabledCorrect:hover {
+  color: #8a8a8a;
+  background-color: #d3d3d3;
+}
+
 @media (max-width: 800px) {
   .answerCard {
     width: 70%;
