@@ -9,7 +9,7 @@ const defaultQuestions = {
 };
 
 const questionsReducer = (state, action) => {
-  const { type } = action;
+  const { type, answer: answerPayload } = action;
 
   if(type === 'POPULATE') {
     const {questions} = action;
@@ -27,7 +27,8 @@ const questionsReducer = (state, action) => {
         difficulty: questionRes.difficulty,
         correct_answer: questionRes.correct_answer,
         answers: scrambleArray(baseAnswers),
-        question: decodeHtml(questionRes.question)
+        question: decodeHtml(questionRes.question),
+        answerSelected: null
       };
       return questionsMaped.push(questionFormat);
     });
@@ -36,6 +37,21 @@ const questionsReducer = (state, action) => {
       questions: questionsMaped,
       currentQuestion: 0
     }
+  }else if(type === 'UPDATE') {
+    const { questionId, answer } = answerPayload.payload;
+    const questionIdx = state.questions.findIndex(q => q.id === questionId);
+
+    const updatedQuestion = state.questions[questionIdx];
+
+    updatedQuestion.answerSelected = answer;
+    
+    const updatedQuestionList = state.questions;
+    updatedQuestionList[questionIdx] = updatedQuestion;
+
+    return {
+      questions: updatedQuestionList,
+      currentQuestion: 0
+    };
   }
 
   return defaultQuestions;
