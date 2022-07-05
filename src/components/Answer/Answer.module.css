@@ -1,15 +1,17 @@
-.answerCard {
+.answerBtn {
   background-color: #006583;
   width: 45%;
+  border: none;
   border-radius: 8px;
   padding: 2px;
   text-align: center;
   margin: 10px;
   transition: all 300ms;
   cursor: pointer;
+  color: #E8F9FF;
 }
 
-.answerCard:hover {
+.answerBtn:hover {
   color: #006583;
   background-color: #E8F9FF;
 }
@@ -23,9 +25,30 @@
   background-color: #37AE34;
 }
 
+.correct:hover {
+  color: #E8F9FF;
+  background-color: #37AE34;
+}
+
 .incorrect {
   color: #E8F9FF;
   background-color: #C65858;
+}
+
+.incorrect:hover {
+  color: #E8F9FF;
+  background-color: #C65858;
+}
+
+.disabled {
+  color: #8a8a8a;
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  color: #8a8a8a;
+  background-color: #d3d3d3;
 }
 
 @media (max-width: 800px) {
