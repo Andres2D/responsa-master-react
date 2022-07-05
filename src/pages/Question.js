@@ -12,7 +12,7 @@ const Question = () => {
     return <Navigate to='/main' />
   }
 
-  const { difficulty, question, category, answers } = questionsCtx.questions[questionsCtx.currentQuestion];
+  const { difficulty, question, category, answers, id } = questionsCtx.questions[questionsCtx.currentQuestion];
 
   return (
     <>
@@ -20,9 +20,11 @@ const Question = () => {
         difficulty={difficulty}
         question={question}
         category={category}
+        questionId={id}
       />
       <AnswerList
         answers={answers}
+        questionId={id}
       />
     </>
   )

@@ -5,7 +5,7 @@ import styles from './AnswersList.module.css';
 const AnswerList = props => {
 
   const answers = props.answers.map((answer) => {
-    return <Answer answer={answer} key={uuidv4()}/>
+    return <Answer answer={answer} key={uuidv4()} questionId={props.questionId}/>
   });
 
   return (
