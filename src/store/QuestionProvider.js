@@ -52,6 +52,8 @@ const questionsReducer = (state, action) => {
       questions: updatedQuestionList,
       currentQuestion: 0
     };
+  }else if(type === 'RESET'){
+    return defaultQuestions;
   }
 
   return defaultQuestions;
@@ -72,12 +74,17 @@ const QuestionsProvider = props => {
     dispatchQuestionsAction({type: 'SUMMARY'});
   };
 
+  const resetHandler = () => {
+    dispatchQuestionsAction({type: 'RESET'});
+  };
+
   const questionsContext = {
     questions: questionsState.questions,
     currentQuestion: questionsState.currentQuestion,
     populateQuestions: populateQuestionsHandler,
     updateAnswer: updateQuestionHandler,
-    calculateSummary: calculateSummaryHandler
+    calculateSummary: calculateSummaryHandler,
+    reset: resetHandler
   }
 
   return (

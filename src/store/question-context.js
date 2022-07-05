@@ -5,6 +5,7 @@ const QuestionsContext = React.createContext({
   currentQuestion: 0,
   populateQuestions: (questions) => {},
   updateAnswer: (answerId, answer) => {},
+  reset: () => {},
   calculateSummary: () => {}
 });
 

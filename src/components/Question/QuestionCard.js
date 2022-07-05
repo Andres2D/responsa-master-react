@@ -27,7 +27,7 @@ const QuestionCard = props => {
     <div className={styles.questionCard}>
       <span className={styles.difficulty}>Difficulty: {props.difficulty}</span>
       <p>{props.question}</p>
-      <h2 className={`${questionStatus?.style}`}>{questionStatus?.label}</h2>
+      {questionStatus && <h2 className={`${questionStatus?.style}`}>{questionStatus?.label}</h2>}
       <span className={styles.category}>- {props.category} -</span>
     </div>
   ) 
