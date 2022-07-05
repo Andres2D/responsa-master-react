@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getRandomPosition } from '../helpers/helpers';
 import categoryList from '../constants/category-list';
+import difficultyList from '../constants/difficulty-list';
 import Button from '../components/UI/Button';
 import Card from '../components/UI/Card';
 import styles from './Menu.module.css';
@@ -68,7 +69,8 @@ const Menu = () => {
   const getRandomQuestionHandler = () => {
     const query = {
       amount: 1,
-      category: getRandomPosition(categoryList).id
+      category: getRandomPosition(categoryList).id,
+      difficulty: getRandomPosition(difficultyList)
     };
     sendRequest(query, singleQuestionHandler);
   };

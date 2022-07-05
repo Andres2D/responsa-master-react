@@ -13,8 +13,8 @@ const useRequest = () => {
       setError(null);
       setIslLoading(true);
 
-      const { amount, category } = queryParams;
-      const query = `${API_URL}amount=${amount}&category=${category}&difficulty=easy&type=multiple`
+      const { amount, category, difficulty } = queryParams;
+      const query = `${API_URL}amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
       const response = await axios.get(query);
 
       if(response.status !== 200) {
