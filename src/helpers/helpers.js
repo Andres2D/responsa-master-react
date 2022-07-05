@@ -15,3 +15,7 @@ export const decodeHtml = text => {
   txt.innerHTML = text;
   return txt.value;
 };
+
+export const getRandomPosition = (array) => {
+  return array[Math.floor(Math.random() * array.length - 1)];
+};
