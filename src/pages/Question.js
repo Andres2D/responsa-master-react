@@ -1,18 +1,17 @@
-import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import AnswerList from '../components/Answer/AnswersList';
 import QuestionCard from '../components/Question/QuestionCard';
-import QuestionsContext from '../store/question-context';
 
 const Question = () => {
 
-  const questionsCtx = useContext(QuestionsContext);
+  const questionsState = useSelector(state => state.questions);
 
-  if(questionsCtx.questions.length === 0) {
+  if(questionsState.questions.length === 0) {
     return <Navigate to='/main' />
   }
 
-  const { difficulty, question, category, answers, id } = questionsCtx.questions[questionsCtx.currentQuestion];
+  const { difficulty, question, category, answers, id } = questionsState.questions[questionsState.currentQuestion];
 
   return (
     <>

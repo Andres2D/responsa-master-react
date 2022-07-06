@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getRandomPosition } from '../helpers/helpers';
 import categoryList from '../constants/category-list';
@@ -7,7 +7,8 @@ import Button from '../components/UI/Button';
 import Card from '../components/UI/Card';
 import styles from './Menu.module.css';
 import useRequest from '../hooks/use-reques';
-import QuestionsContext from '../store/question-context';
+import { questionActions } from '../store/questions';
+import { useEffect } from 'react';
 
 const DUMMY_CARDS = [
   {
@@ -43,18 +44,16 @@ const DUMMY_CARDS = [
 ];
 
 const Menu = () => {
-
   const navigate = useNavigate();
-  
-  const questionsCtx = useContext(QuestionsContext);
-  useEffect(() => {
-    if(!questionsCtx.questions[0]) {
-      return;
-    }
-    const route = `/question/${questionsCtx.questions[0].id}`
-    navigate(route)
+  const questions = useSelector(state => state.questions);
+  const dispatch = useDispatch();
 
-  }, [questionsCtx, navigate]);
+  useEffect(() => {
+    if(questions?.questions[0]){
+      const route = `/question/${questions.questions[0].id}`
+      navigate(route)
+    }
+  }, [questions, navigate])
 
   const {sendRequest} = useRequest();
 
@@ -63,8 +62,8 @@ const Menu = () => {
   });
 
   const singleQuestionHandler = (res) => {
-    questionsCtx.populateQuestions(res);
-  }
+    dispatch(questionActions.populate(res));
+  };
 
   const getRandomQuestionHandler = () => {
     const query = {

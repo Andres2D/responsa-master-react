@@ -1,12 +1,12 @@
-import { useContext } from 'react';
-import QuestionsContext from '../../store/question-context';
+import { useSelector, useDispatch } from 'react-redux';
+import { questionActions } from '../../store/questions';
 import styles from './Answer.module.css';
 
 const Answer = props => {
-
-  const questionCtx = useContext(QuestionsContext);
-  const questionIdx = questionCtx.questions.findIndex(q => q.id === props.questionId); 
-  const questionObj = questionCtx.questions[questionIdx];
+  const dispatch = useDispatch();
+  const questionsState = useSelector(state => state.questions);
+  const questionIdx = questionsState.questions.findIndex(q => q.id === props.questionId); 
+  const questionObj = questionsState.questions[questionIdx];
   let answerStatus = null;
 
   if(props.answer === questionObj.answerSelected) {
@@ -30,7 +30,7 @@ const Answer = props => {
       questionId: props.questionId,
       answer: props.answer
     }
-    questionCtx.updateAnswer({type: 'UPDATE', payload: answerUpdate});
+    dispatch(questionActions.update(answerUpdate));
   };
   
   return (

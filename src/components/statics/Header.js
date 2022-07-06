@@ -1,14 +1,14 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import QuestionsContext from '../../store/question-context';
+import { useDispatch } from 'react-redux';
+import { questionActions } from '../../store/questions';
 import styles from './Header.module.css';
 
 const Header = () => {
 
-  const questionCtx = useContext(QuestionsContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const homeClickHandler = () => {
-    questionCtx.reset();
+    dispatch(questionActions.reset());
     navigate('main', {replace: true});
   };
 

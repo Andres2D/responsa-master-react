@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import QuestionsContext from '../../store/question-context';
+import { useSelector } from 'react-redux';
 import DifficultyState from '../UI/DifficultyState';
 import styles from './QuestionCard.module.css';
 
 const QuestionCard = props => {
 
-  const questionCtx = useContext(QuestionsContext);
-  const questionIdx = questionCtx.questions.findIndex(q => q.id === props.questionId); 
-  const questionObj = questionCtx.questions[questionIdx];
+  const questionsState = useSelector(state => state.questions);
+  const questionIdx = questionsState.questions.findIndex(q => q.id === props.questionId); 
+  const questionObj = questionsState.questions[questionIdx];
   let questionStatus = null;
 
   if(questionObj.answerSelected === questionObj.correct_answer) {
