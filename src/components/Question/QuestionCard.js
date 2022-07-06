@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import QuestionsContext from '../../store/question-context';
+import DifficultyState from '../UI/DifficultyState';
 import styles from './QuestionCard.module.css';
 
 const QuestionCard = props => {
@@ -25,7 +26,7 @@ const QuestionCard = props => {
 
   return (
     <div className={styles.questionCard}>
-      <span className={styles.difficulty}>Difficulty: {props.difficulty}</span>
+      <DifficultyState difficulty={props.difficulty} />
       <p>{props.question}</p>
       {questionStatus && <h2 className={`${questionStatus?.style}`}>{questionStatus?.label}</h2>}
       <span className={styles.category}>- {props.category} -</span>
