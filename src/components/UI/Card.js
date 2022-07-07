@@ -2,8 +2,12 @@ import styles from './Card.module.css';
 
 const Card = props => {
 
-  const onClickHandler = () => {
+  const onClickSingleHandler = () => {
     props.onSingleQuestion(props.id);
+  };
+
+  const onClickGameHandler = () => {
+    props.onGameQuestions(props.id, 5);
   };
 
   return (
@@ -13,9 +17,12 @@ const Card = props => {
         <div className={styles.actions}>
           <button 
             className={`${styles.action} ${styles.single}`}
-            onClick={onClickHandler}
+            onClick={onClickSingleHandler}
           >Single question</button>
-          <button className={`${styles.action} ${styles.game}`}>Game</button>
+          <button 
+            className={`${styles.action} ${styles.game}`}
+            onClick={onClickGameHandler}
+            >Game</button>
         </div>
       </div>
       <img className={styles.image} alt='sports' src={props.image}/>
