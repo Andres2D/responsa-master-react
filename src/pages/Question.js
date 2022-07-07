@@ -1,17 +1,33 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import { questionActions } from '../store/questions';
 import AnswerList from '../components/Answer/AnswersList';
 import QuestionCard from '../components/Question/QuestionCard';
+import Button from '../components/UI/Button';
+import styles from './Question.module.css';
 
 const Question = () => {
-
   const questionsState = useSelector(state => state.questions);
+  const dispatch = useDispatch();
 
-  if(questionsState.questions.length === 0) {
+  if(questionsState.currentQuestion === null) {
     return <Navigate to='/main' />
   }
 
-  const { difficulty, question, category, answers, id } = questionsState.questions[questionsState.currentQuestion];
+  const { 
+    difficulty, 
+    question, 
+    category, 
+    answers, 
+    id,
+    answerSelected
+  } = questionsState.questions[questionsState.currentQuestion];
+
+  const disabledNextButton = answerSelected ? false : true;
+
+  const nextHandler = () => {
+    dispatch(questionActions.nextQuestion());
+  };
 
   return (
     <>
@@ -25,6 +41,13 @@ const Question = () => {
         answers={answers}
         questionId={id}
       />
+      <div className={styles.center}>
+        <Button
+          title='Continue'
+          disabled={disabledNextButton}
+          onClick={nextHandler}
+        />
+      </div>
     </>
   )
 };
