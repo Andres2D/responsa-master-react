@@ -14,7 +14,8 @@ const useRequest = () => {
       setIslLoading(true);
 
       const { amount, category, difficulty } = queryParams;
-      const query = `${API_URL}amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
+      const difficultyQuery = difficulty ? `&difficulty=${difficulty}` : '';
+      const query = `${API_URL}amount=${amount}&category=${category}${difficultyQuery}&type=multiple`
       const response = await axios.get(query);
 
       if(response.status !== 200) {
