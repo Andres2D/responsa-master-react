@@ -33,6 +33,7 @@ const questionsSlice = createSlice({
         return questionsMaped.push(questionFormat);
       });
       state.questions = questionsMaped;
+      state.currentQuestion = 0;
     },
     update(state, action) {
       const { questionId, answer } = action.payload;
@@ -45,6 +46,14 @@ const questionsSlice = createSlice({
       const updatedQuestionList = state.questions;
       updatedQuestionList[questionIdx] = updatedQuestion;
       state.questions = updatedQuestionList;
+    },
+    nextQuestion(state) {
+      if(state.currentQuestion === (state.questions.length - 1)){
+        state.currentQuestion = null;
+        return;
+      }
+
+      state.currentQuestion++;
     },
     reset(state) {
       state.questions = [];
