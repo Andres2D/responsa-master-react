@@ -16,9 +16,9 @@ const Menu = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(questions?.questions[0]){
-      const route = `/question/${questions.questions[0].id}`
-      navigate(route)
+    if(questions?.questions[0] && questions.currentQuestion !== null){
+      const route = `/question/${questions.questions[0].id}`;
+      navigate(route);
     }
   }, [questions, navigate])
 
@@ -28,12 +28,11 @@ const Menu = () => {
     dispatch(questionActions.populate(res));
   };
 
-  const getQuestionHandler = (categoryId) => {
-    console.log(categoryId);
+  const getQuestionHandler = (categoryId, amount = 1) => {    
     const query = {
-      amount: 1,
+      amount,
       category: categoryId ? categoryId : getRandomPosition(categoryList).id,
-      difficulty: getRandomPosition(difficultyList)
+      difficulty: amount === 1 ? getRandomPosition(difficultyList) : null
     };
     sendRequest(query, singleQuestionHandler);
   };
@@ -50,6 +49,7 @@ const Menu = () => {
         title={name} 
         image={picture} 
         onSingleQuestion={getQuestionHandler}
+        onGameQuestions={getQuestionHandler}
       />
     );
   });
