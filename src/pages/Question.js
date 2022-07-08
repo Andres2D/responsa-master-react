@@ -10,7 +10,7 @@ const Question = () => {
   const questionsState = useSelector(state => state.questions);
   const dispatch = useDispatch();
 
-  if(questionsState.currentQuestion === null) {
+  if(questionsState.currentQuestion === null || questionsState.questions.length === 0) {
     return <Navigate to='/main' />
   }
 

@@ -17,7 +17,7 @@ const Menu = () => {
 
   useEffect(() => {
     if(questions?.questions[0] && questions.currentQuestion !== null){
-      const route = `/question/${questions.questions[0].id}`;
+      const route = `/question`;
       navigate(route);
     }
   }, [questions, navigate])

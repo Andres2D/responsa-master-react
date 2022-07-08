@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/main' />} />
         <Route path='/main' element={<Menu />} />
-        <Route path='/question/:quiestionId' element={<Question />} />
+        <Route path='/question' element={<Question />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </Layout>
