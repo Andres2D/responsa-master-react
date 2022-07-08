@@ -6,6 +6,17 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.question {
+  font-size: 30px;
+}
+
+.smallQuestion {
+  font-size: 24px;
+}
+
+.statusTitle {
   font-size: 30px;
 }
 
