@@ -9,6 +9,7 @@ import Button from '../components/UI/Button';
 import Card from '../components/UI/Card';
 import styles from './Menu.module.css';
 import useRequest from '../hooks/use-reques';
+import Loader from '../components/UI/Loader';
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Menu = () => {
     }
   }, [questions, navigate])
 
-  const {sendRequest} = useRequest();
+  const { sendRequest, isLoading } = useRequest();
 
   const singleQuestionHandler = (res) => {
     dispatch(questionActions.populate(res));
@@ -53,6 +54,10 @@ const Menu = () => {
       />
     );
   });
+
+  if(isLoading) {
+    return (<Loader />);
+  }
 
   return (
     <div className={styles.menu}>
