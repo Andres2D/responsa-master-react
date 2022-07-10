@@ -6,7 +6,7 @@ import { questionActions } from '../store/questions';
 import categoryList from '../constants/category-list';
 import difficultyList from '../constants/difficulty-list';
 import Button from '../components/UI/Button';
-import Card from '../components/UI/Card';
+import CardTopic from '../components/Menu/CardTopic';
 import styles from './Menu.module.css';
 import useRequest from '../hooks/use-reques';
 import Loader from '../components/UI/Loader';
@@ -44,7 +44,7 @@ const Menu = () => {
 
   const cardsList = categoryList.map(({id, name, picture}) =>  {
     return (
-      <Card 
+      <CardTopic 
         key={id} 
         id={id}
         title={name} 

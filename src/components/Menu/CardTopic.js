@@ -1,6 +1,6 @@
-import styles from './Card.module.css';
+import styles from './CardTopic.module.css';
 
-const Card = props => {
+const CardTopic = props => {
 
   const onClickSingleHandler = () => {
     props.onSingleQuestion(props.id);
@@ -30,4 +30,4 @@ const Card = props => {
   );
 };
 
-export default Card;
+export default CardTopic;
