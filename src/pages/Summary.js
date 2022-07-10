@@ -4,13 +4,17 @@ import Card from "../components/UI/Card";
 import { calculateScoreMessage } from '../helpers/helpers';
 import { questionActions } from '../store/questions';
 import Button from '../components/UI/Button';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Summary = () => {
 
   const questionsState = useSelector(state => state.questions);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  if(questionsState.questions.length < 2) {
+    return <Navigate to='/main' />
+  }
 
   const {
     totalQuestions,

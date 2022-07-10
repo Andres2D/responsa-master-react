@@ -48,7 +48,7 @@ const questionsSlice = createSlice({
       state.questions = updatedQuestionList;
     },
     nextQuestion(state) {
-      if(state.currentQuestion === (state.questions.length - 1)){
+      if(state.currentQuestion === (state.questions.length) || state.questions.length === 1){
         state.currentQuestion = null;
         return;
       }

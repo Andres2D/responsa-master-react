@@ -14,6 +14,10 @@ const Question = () => {
     return <Navigate to='/main' />
   }
 
+  if(questionsState.currentQuestion === questionsState.questions.length) {
+    return <Navigate to='/summary' />
+  }
+
   const { 
     difficulty, 
     question, 
