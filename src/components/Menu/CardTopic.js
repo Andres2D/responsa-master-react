@@ -18,7 +18,7 @@ const CardTopic = props => {
           <button 
             className={`${styles.action} ${styles.single}`}
             onClick={onClickSingleHandler}
-          >Single question</button>
+          >Single</button>
           <button 
             className={`${styles.action} ${styles.game}`}
             onClick={onClickGameHandler}

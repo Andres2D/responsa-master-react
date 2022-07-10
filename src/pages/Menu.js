@@ -63,7 +63,6 @@ const Menu = () => {
     <div className={styles.menu}>
       <Button
         title='Get random question'
-        emoji='🔀'
         onClick={getRandomQuestionHandler}
       />
       <section className={styles.cards}>
