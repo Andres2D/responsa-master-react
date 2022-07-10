@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { questionActions } from '../../store/questions';
+import logo from './logo.png';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <h1 onClick={homeClickHandler} className={styles.title}>🏠 Responsa Master</h1>
+      <img onClick={homeClickHandler} className={styles.logo} src={logo} alt='serious-monkey'/>
     </header>
   ); 
 }
