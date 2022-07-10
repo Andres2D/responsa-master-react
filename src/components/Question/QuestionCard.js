@@ -24,12 +24,23 @@ const QuestionCard = props => {
     questionStatus = null;
   }
 
+  console.log(questionStatus);
+
   return (
     <Card>
       <DifficultyState difficulty={props.difficulty} />
-      <p className={ questionStatus ? styles.smallQuestion : styles.question }>{props.question}</p>
-      {questionStatus && <h2 className={`${styles.statusTitle} ${questionStatus?.style}`}>{questionStatus?.label}</h2>}
-      <span className={styles.category}>- {props.category} -</span>
+      <p className={styles.question}>{props.question}</p>
+      <div className={styles.bottom}>
+        <h2 
+          className={`
+            ${styles.statusTitle} 
+            ${questionStatus?.style} 
+            ${questionStatus ? styles.show : styles.hide}`}
+          >
+              {questionStatus?.label}
+        </h2>
+        <span className={styles.category}>- {props.category} -</span>
+      </div>
     </Card>
   ) 
 };

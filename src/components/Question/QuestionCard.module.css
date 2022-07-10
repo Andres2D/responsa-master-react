@@ -18,7 +18,7 @@
 
 .correct,
 .incorrect {
-  margin: 5px;
+  margin: 8px;
   text-align: center;
 }
 
@@ -30,9 +30,26 @@
   color: #C65858;
 }
 
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 890px) {
   .difficulty,
   .category {
     font-size: 15px;
+  }
+  .bottom {
+    flex-direction: column;
   }
 }
