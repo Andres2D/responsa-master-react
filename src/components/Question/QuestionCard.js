@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import DifficultyState from '../UI/DifficultyState';
+import Card from '../UI/Card';
 import styles from './QuestionCard.module.css';
 
 const QuestionCard = props => {
@@ -24,12 +25,12 @@ const QuestionCard = props => {
   }
 
   return (
-    <div className={styles.questionCard}>
+    <Card>
       <DifficultyState difficulty={props.difficulty} />
       <p className={ questionStatus ? styles.smallQuestion : styles.question }>{props.question}</p>
       {questionStatus && <h2 className={`${styles.statusTitle} ${questionStatus?.style}`}>{questionStatus?.label}</h2>}
       <span className={styles.category}>- {props.category} -</span>
-    </div>
+    </Card>
   ) 
 };
 
