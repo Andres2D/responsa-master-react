@@ -1,5 +1,13 @@
 import styles from './CardTopic.module.css';
 
+function importAll(r) {
+	let images = {};
+  r.keys().forEach((item, index) => { images[item.replace('./', '')] = r(item); });
+	return images
+}
+
+const images = importAll(require.context('../../assets', false, /\.(png|jpe?g|svg|avif|webp)$/));
+
 const CardTopic = props => {
 
   const onClickSingleHandler = () => {
@@ -25,7 +33,7 @@ const CardTopic = props => {
             >Game</button>
         </div>
       </div>
-      <img className={styles.image} alt='sports' src={props.image}/>
+      <img className={styles.image} alt='sports' src={images[props.image]} />
     </div>
   );
 };

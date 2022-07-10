@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { questionActions } from '../../store/questions';
-import logo from './logo.png';
+import logo from '../../assets/logo.png';
 import styles from './Header.module.css';
 
 const Header = () => {

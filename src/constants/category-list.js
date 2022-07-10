@@ -2,122 +2,122 @@ const categoryList = [
   {
     id: 9,
     name: "General Knowledge",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'general-knowlege.jpeg'
   },
   {
     id: 10,
     name: "Books",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'books.png'
   },
   {
     id: 11,
     name: "Films",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'films.jpeg'
   },
   {
     id: 12,
     name: "Music",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'music.jpeg'
   },
   {
     id: 13,
     name: " Musicals & Theatres",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'theater.jpeg'
   },
   {
     id: 14,
     name: "Television",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'television.jpeg'
   },
   {
     id: 15,
     name: "Video Games",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'videogames.jpeg'
   },
   {
     name: "Board Games",
     id: 16,
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'board-games.webp'
   },
   {
     id: 17,
     name: "Science & Nature",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'science.jpeg'
   },
   {
     id: 18,
     name: "Computers",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'computers.jpeg'
   },
   {
     id: 19,
     name: "Mathematics",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'math.jpeg'
   },
   {
     id: 20,
     name: "Mythology",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'mythology.jpeg'
   },
   {
     id: 21,
     name: "Sports",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'sports.jpeg'
   },
   {
     id: 22,
     name: "Geography",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'geography.jpeg'
   },
   {
     id: 23,
     name: "History",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'history.jpeg'
   },
   {
     id: 24,
     name: "Politics",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'politics.jpeg'
   },
   {
     id: 25,
     name: "Art",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'art.jpeg'
   },
   {
     id: 26,
     name: "Celebrities",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'celebrities.webp'
   },
   {
     id: 27,
     name: "Animals",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'animals.webp'
   },
   {
     id: 28,
     name: "Vehicles",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'vehicles.jpeg'
   },
   {
     id: 29,
     name: "Comics",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'comics.jpeg'
   },
   {
     id: 30,
     name: "Gadgets",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'gadgets.avif'
   },
   {
     id: 31,
     name: "Japanese Anime & Manga",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'anime.jpeg'
   },
   {
     id: 32,
     name: "Cartoon & Animations",
-    picture: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pocket_books.png/1200px-Pocket_books.png'
+    picture: 'cartoons.webp'
   }
 ];
 
