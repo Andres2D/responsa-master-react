@@ -1,3 +1,4 @@
+import summaryMessages from '../constants/summary-messages'; 
 
 export const scrambleArray = array => {
   let currentIndex = array.length, randomIndex;
@@ -19,3 +20,26 @@ export const decodeHtml = text => {
 export const getRandomPosition = (array) => {
   return array[Math.floor(Math.random() * (array.length - 1))];
 };
+
+export const calculateScoreMessage = (questions) => {
+  if(!questions || questions.length < 2){
+    return null;
+  }
+
+  const totalQuestions = questions.length;
+  let correctAnswers = 0;
+
+  questions.forEach(question => {
+    correctAnswers = question.answerSelected === question.correct_answer
+    ? (correctAnswers + 1) : correctAnswers;
+  });
+
+  const percentage = (correctAnswers / totalQuestions) * 100;
+  const message = summaryMessages.filter(q =>  percentage <= q.limit)[0].message || '';
+
+  return {
+    totalQuestions,
+    correctAnswers,
+    message
+  }
+}
