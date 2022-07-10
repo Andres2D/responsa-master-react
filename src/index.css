@@ -18,3 +18,8 @@ code {
   font-family: 'Rubik' 'Courier New',
     monospace;
 }
+
+a {
+  text-decoration: none;
+  color: #E8F9FF;
+}

@@ -4,8 +4,10 @@ import Header from "../statics/Header";
 const Layout = props => {
   return (
     <>
-      <Header />
+      <div style={{minHeight: '100vh'}}>
+        <Header />
         {props.children}
+      </div>
       <Footer />
     </>
   );
