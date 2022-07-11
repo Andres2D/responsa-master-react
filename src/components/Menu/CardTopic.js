@@ -21,7 +21,9 @@ const CardTopic = props => {
   return (
     <div className={styles.card}>
       <div className={styles.card_content}>
-        <h2 className={styles.title} aria-hidden>{props.title}</h2>
+        <div className={styles.titleCard}>
+          <h2 className={styles.title} aria-hidden>{props.title}</h2>
+        </div>
         <div className={styles.actions}>
           <button 
             className={`${styles.action} ${styles.single}`}
