@@ -23,9 +23,6 @@ const QuestionCard = props => {
   }else {
     questionStatus = null;
   }
-
-  console.log(questionStatus);
-
   return (
     <Card>
       <DifficultyState difficulty={props.difficulty} />
