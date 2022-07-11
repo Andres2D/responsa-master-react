@@ -1,6 +1,5 @@
 .card {
   margin-top: 50px;
-  border: 2px solid #E8F9FF;
   border-radius: 9px;
   width: 250px;
   height: 200px;
@@ -26,6 +25,8 @@
   color: white;
   height: 100%;
   width: 100%;
+  box-shadow: rgb(200 231 240 / 15%) 12px 12px 20px, rgb(181 213 222 / 5%) 0px 5px 10px;
+  cursor: pointer;
 }
 
 .image {
@@ -51,8 +52,7 @@
 
 .action {
   width: 50%;
-  border: 2px solid #E8F9FF;
-  border-bottom: none;
+  border: none;
   padding: 8px;
   cursor: pointer;
   background-color: #006583;
