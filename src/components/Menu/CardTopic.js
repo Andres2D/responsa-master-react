@@ -33,7 +33,12 @@ const CardTopic = props => {
             >Game</button>
         </div>
       </div>
-      <img className={styles.image} alt='sports' src={images[props.image]} />
+      <img 
+        className={styles.image} 
+        alt={props.title} 
+        src={images[props.image]} 
+        loading="lazy"
+      />
     </div>
   );
 };

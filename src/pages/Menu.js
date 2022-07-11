@@ -21,7 +21,9 @@ const Menu = () => {
       const route = `/question`;
       navigate(route);
     }
-  }, [questions, navigate])
+  }, [questions, navigate]);
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const { sendRequest, isLoading } = useRequest();
 
